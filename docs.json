@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
             "group": "Get Started",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "tab": "Guides",
+        "tab": "SDK",
         "groups": [
           {
             "group": "Get Started",
@@ -59,7 +59,7 @@
         ]
       },
       {
-        "tab": "Guides",
+        "tab": "Insights",
         "groups": [
           {
             "group": "Get Started",
