@@ -35,23 +35,62 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "API Documentation",
         "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+            {
+                "group": "Overview",
+                "pages": [
+                    "overview-sdks-apis"
+                ]
+            },
+            {
+                "group": "Interfaces",
+                "pages": [
+                    {
+                        "group": "Python SDK",
+                        "pages": [
+                            "python-sdk/python-usage",
+                            "python-sdk/examples"
+                        ]
+                    },
+                    {
+                        "group": "Typescript SDK",
+                        "pages": [
+                            "typescript-sdk/typescript-usage",
+                            "typescript-sdk/examples"
+                        ]
+                    },
+                    {
+                        "group": "REST API",
+                        "pages": [
+                            "rest/overview",
+                            {
+                                "group": "Authentication",
+                                "pages": [
+                                    "rest/authentication"
+                                ]
+                            },
+                            {
+                                "group": "Events",
+                                "pages": [
+                                    "rest/events/session-start",
+                                    "rest/events/session-identify",
+                                    "rest/events/session-alias",
+                                    "rest/events/track",
+                                    "rest/events/session-end",
+                                    "rest/events/conversation-start",
+                                    "rest/events/conversation-turn",
+                                    "rest/events/conversation-usage",
+                                    "rest/events/conversation-end",
+                                    "rest/events/user-identify",
+                                    "rest/events/user-alias",
+                                    "rest/events/live-events-auth"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
       }
     ],
