@@ -1,0 +1,53 @@
+---
+title: Overview
+---
+
+When you send track events to the Mindlytics service using a REST endpoint, the incoming event is sent to a processing queue and the
+REST endpoint returns immediately.  This queuing architecture means there will be very little impact to your application when
+using the Mindlytics service.  Depending on the type of event you are sending to Mindlytics, the processing of that event may take a little time
+and may generate several new events as a result.  In some use cases it may be desirable to see these events as and when they are generated.
+You can accomplish this with a websocket connection to the Mindlytics service to receive these generated events.
+
+The way this works is that you must first use an authenticated REST call to obtain an "authorization token" and then use this authorization token in
+a custom header when creating the websocket client.  Here are some usage examples:
+
+<CodeGroup>
+
+```javascript javascript icon="node"
+import Websocket from 'ws'
+
+const MLWSEndpoint = "wss://wss.mindlytics.ai"
+
+const wsAuthorizationToken = await getAuthorizationToken()
+const wsClient = new WebSocket(MLWSEndpoint, {
+    headers: {
+        Authorization: `Bearer ${wsAuthorizationToken}`,
+    },
+})
+
+wsClient.on('error', (error) => {
+    console.log(error.message)
+})
+
+wsClient.on('message', (message) => {
+    const event = JSON.parse(message)
+    console.log(event)
+})
+```
+
+```python python icon="python"
+import websockets
+from websockets.asyncio.client import connect
+
+ws_url = "wss://wss.mindlytics.ai"
+
+ws_authorization_token = await get_authorization_token()
+headers = [("Authorization", f"Bearer {ws_authorization_token}")]
+async with connect(ws_url, additional_headers=headers) as websocket:
+    async for message in websocket:
+        event = json.loads(message)
+        print(event)
+
+```
+
+</CodeGroup>

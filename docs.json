@@ -65,26 +65,32 @@
                         "pages": [
                             "rest/overview",
                             {
-                                "group": "Authentication",
+                                "group": "User Identification",
                                 "pages": [
-                                    "rest/authentication"
+                                    "rest/user/overview",
+                                    "rest/user/user-identify",
+                                    "rest/user/user-alias"
                                 ]
                             },
                             {
-                                "group": "Events",
+                                "group": "Event Tracking",
                                 "pages": [
                                     "rest/events/session-start",
                                     "rest/events/session-identify",
                                     "rest/events/session-alias",
                                     "rest/events/track",
-                                    "rest/events/session-end",
                                     "rest/events/conversation-start",
                                     "rest/events/conversation-turn",
                                     "rest/events/conversation-usage",
                                     "rest/events/conversation-end",
-                                    "rest/events/user-identify",
-                                    "rest/events/user-alias",
-                                    "rest/events/live-events-auth"
+                                    "rest/events/session-end"
+                                ]
+                            },
+                            {
+                                "group": "Live Feedback",
+                                "pages": [
+                                    "rest/live-events/overview",
+                                    "rest/live-events/live-events-auth"
                                 ]
                             }
                         ]
