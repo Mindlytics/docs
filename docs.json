@@ -21,17 +21,6 @@
               "use-cases",
               "terminology"
             ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
           }
         ]
       },
@@ -98,6 +87,61 @@
                     }
                 ]
             }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/api-definitions"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Insights",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "insights/getting-started"
+            ]
+          },
+          {
+            "group": "Charts",
+            "pages": [
+              "insights/charts/conversation-analysis",
+              "insights/charts/intent-analysis",
+              "insights/charts/segmentation",
+              "insights/charts/session",
+              "insights/charts/user-composition",
+              "insights/charts/funnel",
+              "insights/charts/intent-distribution",
+              "insights/charts/retention",
+              "insights/charts/sentiment-analysis"
+            ]
+          },
+          {
+            "group": "Events",
+            "pages": [
+              "insights/events/overview"
+            ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              "insights/users/overview"
+            ]
+          },
+          {
+            "group": "Cohorts",
+            "pages": [
+              "insights/cohorts/overview"
+            ]
+          }
         ]
       }
     ],
