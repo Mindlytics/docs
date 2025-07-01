@@ -25,7 +25,7 @@
         ]
       },
       {
-        "tab": "API Documentation",
+        "tab": "SDKs",
         "groups": [
             {
                 "group": "Overview",
@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "group": "Interfaces",
+                "group": "SDKs",
                 "pages": [
                     {
                         "group": "Python SDK",
@@ -50,6 +50,57 @@
                             "typescript-sdk/examples"
                         ]
                     },
+                    {
+                        "group": "REST API",
+                        "pages": [
+                            "rest/overview",
+                            {
+                                "group": "User Identification",
+                                "pages": [
+                                    "rest/user/overview",
+                                    "rest/user/user-identify",
+                                    "rest/user/user-alias"
+                                ]
+                            },
+                            {
+                                "group": "Event Tracking",
+                                "pages": [
+                                    "rest/events/session-start",
+                                    "rest/events/session-identify",
+                                    "rest/events/session-alias",
+                                    "rest/events/track",
+                                    "rest/events/conversation-start",
+                                    "rest/events/conversation-turn",
+                                    "rest/events/conversation-usage",
+                                    "rest/events/conversation-end",
+                                    "rest/events/session-end"
+                                ]
+                            },
+                            {
+                                "group": "Live Feedback",
+                                "pages": [
+                                    "rest/live-events/overview",
+                                    "rest/live-events/live-events-auth"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+            {
+                "group": "Overview",
+                "pages": [
+                    "overview-sdks-apis"
+                ]
+            },
+            {
+                "group": "Interfaces",
+                "pages": [
                     {
                         "group": "REST API",
                         "pages": [
@@ -148,18 +199,18 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Home",
+          "href": "https://developer.mindlytics.ai",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "href": "https://mindlytics.ai/community",
           "icon": "slack"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://mindlytics.ai/blog",
           "icon": "newspaper"
         }
       ]
@@ -167,7 +218,7 @@
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/light.svg"
   },
   "navbar": {
     "links": [
