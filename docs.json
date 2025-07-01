@@ -127,19 +127,19 @@
           {
             "group": "Events",
             "pages": [
-              "insights/events/overview"
+              "insights/events"
             ]
           },
           {
             "group": "Users",
             "pages": [
-              "insights/users/overview"
+              "insights/users"
             ]
           },
           {
             "group": "Cohorts",
             "pages": [
-              "insights/cohorts/overview"
+              "insights/cohorts"
             ]
           }
         ]
