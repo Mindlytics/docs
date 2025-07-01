@@ -17,8 +17,9 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "how-mindlytics-works",
+              "use-cases",
+              "terminology"
             ]
           },
           {
