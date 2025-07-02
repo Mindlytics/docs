@@ -49,41 +49,6 @@
                             "typescript-sdk/typescript-usage",
                             "typescript-sdk/examples"
                         ]
-                    },
-                    {
-                        "group": "REST API",
-                        "pages": [
-                            "rest/overview",
-                            {
-                                "group": "User Identification",
-                                "pages": [
-                                    "rest/user/overview",
-                                    "rest/user/user-identify",
-                                    "rest/user/user-alias"
-                                ]
-                            },
-                            {
-                                "group": "Event Tracking",
-                                "pages": [
-                                    "rest/events/session-start",
-                                    "rest/events/session-identify",
-                                    "rest/events/session-alias",
-                                    "rest/events/track",
-                                    "rest/events/conversation-start",
-                                    "rest/events/conversation-turn",
-                                    "rest/events/conversation-usage",
-                                    "rest/events/conversation-end",
-                                    "rest/events/session-end"
-                                ]
-                            },
-                            {
-                                "group": "Live Feedback",
-                                "pages": [
-                                    "rest/live-events/overview",
-                                    "rest/live-events/live-events-auth"
-                                ]
-                            }
-                        ]
                     }
                 ]
             }
@@ -97,6 +62,41 @@
             "pages": [
               "api-reference/introduction",
               "api-reference/api-definitions"
+            ]
+          },
+          {
+            "group": "REST API",
+            "pages": [
+                "rest/overview",
+                {
+                    "group": "User Identification",
+                    "pages": [
+                        "rest/user/overview",
+                        "rest/user/user-identify",
+                        "rest/user/user-alias"
+                    ]
+                },
+                {
+                    "group": "Event Tracking",
+                    "pages": [
+                        "rest/events/session-start",
+                        "rest/events/session-identify",
+                        "rest/events/session-alias",
+                        "rest/events/track",
+                        "rest/events/conversation-start",
+                        "rest/events/conversation-turn",
+                        "rest/events/conversation-usage",
+                        "rest/events/conversation-end",
+                        "rest/events/session-end"
+                    ]
+                },
+                {
+                    "group": "Live Feedback",
+                    "pages": [
+                        "rest/live-events/overview",
+                        "rest/live-events/live-events-auth"
+                    ]
+                }
             ]
           }
         ]
