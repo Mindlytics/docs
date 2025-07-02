@@ -62,18 +62,21 @@
             "pages": [
               "api-reference/introduction",
               "api-reference/api-definitions",
-              "rest/overview",
               {
-                  "group": "User Identification",
-                  "pages": [
+                "group": "REST API",
+                "pages": [
+                  "rest/overview",
+                  {
+                    "group": "User Identification",
+                    "pages": [
                       "rest/user/overview",
                       "rest/user/user-identify",
                       "rest/user/user-alias"
-                  ]
-              },
-              {
-                  "group": "Event Tracking",
-                  "pages": [
+                    ]
+                  },
+                  {
+                    "group": "Event Tracking",
+                    "pages": [
                       "rest/events/session-start",
                       "rest/events/session-identify",
                       "rest/events/session-alias",
@@ -83,14 +86,16 @@
                       "rest/events/conversation-usage",
                       "rest/events/conversation-end",
                       "rest/events/session-end"
-                  ]
-              },
-              {
-                  "group": "Live Feedback",
-                  "pages": [
+                    ]
+                  },
+                  {
+                    "group": "Live Feedback",
+                    "pages": [
                       "rest/live-events/overview",
                       "rest/live-events/live-events-auth"
-                  ]
+                    ]
+                  }
+                ]
               }
             ]
           }
