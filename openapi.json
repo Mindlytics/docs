@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "https://app.mindlytics.ai/bc/v1"
+            "url": "https://app.mindlytics.ai"
         }
     ],
     "security": [
@@ -16,7 +16,7 @@
         }
     ],
     "paths": {
-        "/charts/segmentation-chart": {
+        "/bc/v1/charts/segmentation-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -1072,7 +1072,7 @@
                 }
             }
         },
-        "/charts/retention-chart": {
+        "/bc/v1/charts/retention-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -2298,7 +2298,7 @@
                 }
             }
         },
-        "/charts/session-chart": {
+        "/bc/v1/charts/session-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -3382,7 +3382,7 @@
                 }
             }
         },
-        "/charts/user-composition-chart": {
+        "/bc/v1/charts/user-composition-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -4317,7 +4317,7 @@
                 }
             }
         },
-        "/charts/intent-distribution-chart": {
+        "/bc/v1/charts/intent-distribution-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -5049,7 +5049,7 @@
                 }
             }
         },
-        "/charts/funnel-chart": {
+        "/bc/v1/charts/funnel-chart": {
             "get": {
                 "tags": [
                     "Charts"
@@ -6116,7 +6116,7 @@
                 }
             }
         },
-        "/charts/conversation-analysis": {
+        "/bc/v1/charts/conversation-analysis": {
             "get": {
                 "tags": [
                     "Charts"
@@ -7443,7 +7443,7 @@
                 }
             }
         },
-        "/charts/intent-analysis": {
+        "/bc/v1/charts/intent-analysis": {
             "get": {
                 "tags": [
                     "Charts"
@@ -8780,7 +8780,7 @@
                 }
             }
         },
-        "/charts/sentiment-analysis": {
+        "/bc/v1/charts/sentiment-analysis": {
             "get": {
                 "tags": [
                     "Charts"
@@ -9685,7 +9685,7 @@
                 }
             }
         },
-        "/agg/event-names": {
+        "/bc/v1/agg/event-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -9756,7 +9756,7 @@
                 }
             }
         },
-        "/agg/property-names": {
+        "/bc/v1/agg/property-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -9788,8 +9788,50 @@
                                         "description": "Previously picked proerty, trait or attribute name."
                                     },
                                     "value": {
-                                        "type": "string",
+                                        "anyOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number"
+                                            },
+                                            {
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        ],
                                         "description": "Previously picked property, trait or attribute value."
+                                    },
+                                    "operator": {
+                                        "type": "string",
+                                        "enum": [
+                                            "eq",
+                                            "neq",
+                                            "in",
+                                            "nin",
+                                            "case_insensitive_eq",
+                                            "case_insensitive_neq",
+                                            "regex",
+                                            "not_regex",
+                                            "between",
+                                            "gt",
+                                            "gte",
+                                            "lt",
+                                            "lte"
+                                        ],
+                                        "description": "Previous operator for the pick.  Defaults to \"eq\".",
+                                        "example": "eq"
                                     }
                                 },
                                 "required": [
@@ -9797,7 +9839,7 @@
                                     "value"
                                 ]
                             },
-                            "description": "Existing picks.  Will narrown now current return values.",
+                            "description": "Existing picks.  Will narrow down current return values.",
                             "example": [
                                 {
                                     "name": "name",
@@ -9805,7 +9847,8 @@
                                 },
                                 {
                                     "name": "age",
-                                    "value": "30"
+                                    "value": 30,
+                                    "operator": "gte"
                                 }
                             ]
                         }
@@ -9873,7 +9916,7 @@
                 }
             }
         },
-        "/agg/property-values": {
+        "/bc/v1/agg/property-values": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -9962,7 +10005,7 @@
                 }
             }
         },
-        "/agg/trait-names": {
+        "/bc/v1/agg/trait-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -9994,8 +10037,50 @@
                                         "description": "Previously picked proerty, trait or attribute name."
                                     },
                                     "value": {
-                                        "type": "string",
+                                        "anyOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number"
+                                            },
+                                            {
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        ],
                                         "description": "Previously picked property, trait or attribute value."
+                                    },
+                                    "operator": {
+                                        "type": "string",
+                                        "enum": [
+                                            "eq",
+                                            "neq",
+                                            "in",
+                                            "nin",
+                                            "case_insensitive_eq",
+                                            "case_insensitive_neq",
+                                            "regex",
+                                            "not_regex",
+                                            "between",
+                                            "gt",
+                                            "gte",
+                                            "lt",
+                                            "lte"
+                                        ],
+                                        "description": "Previous operator for the pick.  Defaults to \"eq\".",
+                                        "example": "eq"
                                     }
                                 },
                                 "required": [
@@ -10003,7 +10088,7 @@
                                     "value"
                                 ]
                             },
-                            "description": "Existing picks.  Will narrown now current return values.",
+                            "description": "Existing picks.  Will narrow down current return values.",
                             "example": [
                                 {
                                     "name": "name",
@@ -10011,7 +10096,8 @@
                                 },
                                 {
                                     "name": "age",
-                                    "value": "30"
+                                    "value": 30,
+                                    "operator": "gte"
                                 }
                             ]
                         }
@@ -10079,7 +10165,7 @@
                 }
             }
         },
-        "/agg/trait-values": {
+        "/bc/v1/agg/trait-values": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10168,7 +10254,7 @@
                 }
             }
         },
-        "/agg/intent-names": {
+        "/bc/v1/agg/intent-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10239,7 +10325,7 @@
                 }
             }
         },
-        "/agg/intent-attribute-names": {
+        "/bc/v1/agg/intent-attribute-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10271,8 +10357,50 @@
                                         "description": "Previously picked proerty, trait or attribute name."
                                     },
                                     "value": {
-                                        "type": "string",
+                                        "anyOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number"
+                                            },
+                                            {
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        ],
                                         "description": "Previously picked property, trait or attribute value."
+                                    },
+                                    "operator": {
+                                        "type": "string",
+                                        "enum": [
+                                            "eq",
+                                            "neq",
+                                            "in",
+                                            "nin",
+                                            "case_insensitive_eq",
+                                            "case_insensitive_neq",
+                                            "regex",
+                                            "not_regex",
+                                            "between",
+                                            "gt",
+                                            "gte",
+                                            "lt",
+                                            "lte"
+                                        ],
+                                        "description": "Previous operator for the pick.  Defaults to \"eq\".",
+                                        "example": "eq"
                                     }
                                 },
                                 "required": [
@@ -10280,7 +10408,7 @@
                                     "value"
                                 ]
                             },
-                            "description": "Existing picks.  Will narrown now current return values.",
+                            "description": "Existing picks.  Will narrow down current return values.",
                             "example": [
                                 {
                                     "name": "name",
@@ -10288,7 +10416,8 @@
                                 },
                                 {
                                     "name": "age",
-                                    "value": "30"
+                                    "value": 30,
+                                    "operator": "gte"
                                 }
                             ]
                         }
@@ -10356,7 +10485,7 @@
                 }
             }
         },
-        "/agg/intent-attribute-values": {
+        "/bc/v1/agg/intent-attribute-values": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10445,7 +10574,7 @@
                 }
             }
         },
-        "/agg/user-trait-names": {
+        "/bc/v1/agg/user-trait-names": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10477,8 +10606,50 @@
                                         "description": "Previously picked proerty, trait or attribute name."
                                     },
                                     "value": {
-                                        "type": "string",
+                                        "anyOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number"
+                                            },
+                                            {
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        ],
                                         "description": "Previously picked property, trait or attribute value."
+                                    },
+                                    "operator": {
+                                        "type": "string",
+                                        "enum": [
+                                            "eq",
+                                            "neq",
+                                            "in",
+                                            "nin",
+                                            "case_insensitive_eq",
+                                            "case_insensitive_neq",
+                                            "regex",
+                                            "not_regex",
+                                            "between",
+                                            "gt",
+                                            "gte",
+                                            "lt",
+                                            "lte"
+                                        ],
+                                        "description": "Previous operator for the pick.  Defaults to \"eq\".",
+                                        "example": "eq"
                                     }
                                 },
                                 "required": [
@@ -10486,7 +10657,7 @@
                                     "value"
                                 ]
                             },
-                            "description": "Existing picks.  Will narrown now current return values.",
+                            "description": "Existing picks.  Will narrow down current return values.",
                             "example": [
                                 {
                                     "name": "name",
@@ -10494,7 +10665,8 @@
                                 },
                                 {
                                     "name": "age",
-                                    "value": "30"
+                                    "value": 30,
+                                    "operator": "gte"
                                 }
                             ]
                         }
@@ -10562,7 +10734,7 @@
                 }
             }
         },
-        "/agg/user-trait-values": {
+        "/bc/v1/agg/user-trait-values": {
             "get": {
                 "tags": [
                     "Aggregation"
@@ -10651,7 +10823,7 @@
                 }
             }
         },
-        "/db/retrieve_data": {
+        "/bc/v1/db/retrieve_data": {
             "get": {
                 "tags": [
                     "Database"
@@ -10677,7 +10849,7 @@
                 }
             }
         },
-        "/db/import_demo_data": {
+        "/bc/v1/db/import_demo_data": {
             "get": {
                 "tags": [
                     "Database"
@@ -10708,7 +10880,7 @@
                 }
             }
         },
-        "/db/{collection}/{op}": {
+        "/bc/v1/db/{collection}/{op}": {
             "get": {
                 "tags": [
                     "Database"
@@ -10818,7 +10990,7 @@
                 }
             }
         },
-        "/orgkeys": {
+        "/bc/v1/orgkeys": {
             "get": {
                 "tags": [
                     "Organization Keys"
@@ -10992,7 +11164,7 @@
                 }
             }
         },
-        "/udi": {
+        "/bc/v1/udi": {
             "post": {
                 "tags": [
                     "User Defined Intents"
@@ -11189,7 +11361,7 @@
                 }
             }
         },
-        "/udi/{user_defined_intent_id}": {
+        "/bc/v1/udi/{user_defined_intent_id}": {
             "get": {
                 "tags": [
                     "User Defined Intents"
@@ -11440,7 +11612,7 @@
                 }
             }
         },
-        "/events/event": {
+        "/bc/v1/events/event": {
             "post": {
                 "tags": [
                     "Events"
@@ -11540,7 +11712,7 @@
                 }
             }
         },
-        "/events/event/identify": {
+        "/bc/v1/events/event/identify": {
             "post": {
                 "tags": [
                     "Events"
@@ -11654,7 +11826,7 @@
                 }
             }
         },
-        "/events/event/alias": {
+        "/bc/v1/events/event/alias": {
             "post": {
                 "tags": [
                     "Events"
@@ -11753,7 +11925,7 @@
                 }
             }
         },
-        "/events/event/start-session": {
+        "/bc/v1/events/event/start-session": {
             "post": {
                 "tags": [
                     "Events"
@@ -11867,7 +12039,7 @@
                 }
             }
         },
-        "/events/event/end-session": {
+        "/bc/v1/events/event/end-session": {
             "post": {
                 "tags": [
                     "Events"
@@ -11973,7 +12145,7 @@
                 }
             }
         },
-        "/events/event/track": {
+        "/bc/v1/events/event/track": {
             "post": {
                 "tags": [
                     "Events"
@@ -12088,7 +12260,7 @@
                 }
             }
         },
-        "/events/event/start-conversation": {
+        "/bc/v1/events/event/start-conversation": {
             "post": {
                 "tags": [
                     "Events"
@@ -12224,7 +12396,7 @@
                 }
             }
         },
-        "/events/event/end-conversation": {
+        "/bc/v1/events/event/end-conversation": {
             "post": {
                 "tags": [
                     "Events"
@@ -12421,7 +12593,7 @@
                 }
             }
         },
-        "/events/event/conversation-turn": {
+        "/bc/v1/events/event/conversation-turn": {
             "post": {
                 "tags": [
                     "Events"
@@ -12573,7 +12745,7 @@
                 }
             }
         },
-        "/events/event/conversation-usage": {
+        "/bc/v1/events/event/conversation-usage": {
             "post": {
                 "tags": [
                     "Events"
@@ -12717,7 +12889,7 @@
                 }
             }
         },
-        "/events/event/conversation-function": {
+        "/bc/v1/events/event/conversation-function": {
             "post": {
                 "tags": [
                     "Events"
@@ -12861,7 +13033,7 @@
                 }
             }
         },
-        "/events/queue": {
+        "/bc/v1/events/queue": {
             "post": {
                 "tags": [
                     "Events"
@@ -12935,7 +13107,7 @@
                 }
             }
         },
-        "/summary/top-intents": {
+        "/bc/v1/summary/top-intents": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13050,7 +13222,7 @@
                 }
             }
         },
-        "/summary/user-sentiment": {
+        "/bc/v1/summary/user-sentiment": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13267,7 +13439,7 @@
                 }
             }
         },
-        "/summary/user-conversations": {
+        "/bc/v1/summary/user-conversations": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13481,7 +13653,7 @@
                 }
             }
         },
-        "/summary/engagement": {
+        "/bc/v1/summary/engagement": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13703,7 +13875,7 @@
                 }
             }
         },
-        "/summary/event-counts": {
+        "/bc/v1/summary/event-counts": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13818,7 +13990,7 @@
                 }
             }
         },
-        "/summary/new-intents": {
+        "/bc/v1/summary/new-intents": {
             "get": {
                 "tags": [
                     "Summary"
@@ -13847,7 +14019,7 @@
                 }
             }
         },
-        "/user/list": {
+        "/bc/v1/user/list": {
             "get": {
                 "tags": [
                     "User"
@@ -13992,7 +14164,7 @@
                 }
             }
         },
-        "/user/details": {
+        "/bc/v1/user/details": {
             "get": {
                 "tags": [
                     "User"
@@ -14251,7 +14423,7 @@
                 }
             }
         },
-        "/user/insights": {
+        "/bc/v1/user/insights": {
             "get": {
                 "tags": [
                     "User"
@@ -14404,7 +14576,7 @@
                 }
             }
         },
-        "/user/conversation": {
+        "/bc/v1/user/conversation": {
             "get": {
                 "tags": [
                     "User"
@@ -14483,7 +14655,7 @@
                 }
             }
         },
-        "/user/event": {
+        "/bc/v1/user/event": {
             "get": {
                 "tags": [
                     "User"
@@ -14596,7 +14768,7 @@
                 }
             }
         },
-        "/user/identify": {
+        "/bc/v1/user/identify": {
             "post": {
                 "tags": [
                     "User"
@@ -14604,6 +14776,7 @@
                 "summary": "Identify user",
                 "description": "Identify user.  The user id, or the user's device id, or both must be provided",
                 "requestBody": {
+                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -14702,7 +14875,7 @@
                 }
             }
         },
-        "/user/alias": {
+        "/bc/v1/user/alias": {
             "post": {
                 "tags": [
                     "User"
@@ -14710,6 +14883,7 @@
                 "summary": "Alias user",
                 "description": "Alias user",
                 "requestBody": {
+                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -14795,7 +14969,7 @@
                 }
             }
         },
-        "/live-events/events": {
+        "/bc/v1/live-events/events": {
             "get": {
                 "tags": [
                     "Live Events"
@@ -14935,7 +15109,7 @@
                 }
             }
         },
-        "/live-events/realtime": {
+        "/bc/v1/live-events/realtime": {
             "get": {
                 "tags": [
                     "Live Events"
@@ -14978,7 +15152,7 @@
                 }
             }
         },
-        "/cohorts/byName": {
+        "/bc/v1/cohorts/byName": {
             "get": {
                 "tags": [
                     "Cohorts"
@@ -15101,7 +15275,7 @@
                 }
             }
         },
-        "/cohorts/byId": {
+        "/bc/v1/cohorts/byId": {
             "get": {
                 "tags": [
                     "Cohorts"
@@ -15224,7 +15398,7 @@
                 }
             }
         },
-        "/cohorts/evaluate": {
+        "/bc/v1/cohorts/evaluate": {
             "get": {
                 "tags": [
                     "Cohorts"
@@ -15330,7 +15504,7 @@
                 }
             }
         },
-        "/cohorts": {
+        "/bc/v1/cohorts": {
             "post": {
                 "tags": [
                     "Cohorts"
