@@ -3,3 +3,5 @@ title: "Introduction"
 ---
 
 Mindlytics offers a powerful RESTful APIs designed for applications to record human–AI interactions and user actions to analyse and visualize from the Mindlytics portal. It enables developers to seamlessly integrate their application with mindlytics analytics platform to track and monitor user intent, engagement, and AI performance.
+
+Depending on the application structure and customer's unique tracking needs, the APIs may be instrumented along with the SDKs.  Not all the APIs may be required for a given implementation. For instance, a customer may choose to use _track_ API to track custom events while relying on the mindlytics SDKs to track sessions, conversations and user intents. In an another implementation, a customer may choose to use the mindlytics APIs to send custom events, conversation turns, session starts/ends etc. and not use the mindlytics SDK at all.   
