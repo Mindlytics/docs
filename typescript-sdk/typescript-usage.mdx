@@ -1,8 +1,8 @@
 ---
-title: Typescript SDK Usage
+title: "Typescript SDK Usage"
 ---
 
-This is the [Mindlytics](https://mindlytics.ai) client-side SDK for Javascript clients. It is used to authenticate and send telemetry events to the Mindlytics analytics backend server.
+This is the [Mindlytics](https://mindlytics.ai) client-side SDK for Javascript clients. It is used to authenticate and send telemetry events to the Mindlytics analytics backend server. 
 
 This SDK uses an async queue to decouple your existing client code from the communication overhead of sending data to Mindlytics. When you send events with this SDK you are simply pushing data into a queue. In the background, the SDK will pop the queue and handle the actual communication with Mindlytics, handling errors, timeouts, rate limits, etc with zero impact to your main application.
 
@@ -126,7 +126,7 @@ session.startListening(
 )
 ```
 
-Any `yourData` that you supply will be sent to your handlers as a second argument.  You can use this to gain access to contextual information if needed.  
+Any `yourData` that you supply will be sent to your handlers as a second argument.  You can use this to gain access to contextual information if needed.
 
 ## Concepts
 
@@ -230,7 +230,7 @@ End the session.  You must call this method to end a session.  This gives the Mi
 await session.flush()
 ```
 
-This method will return only after all queued messages are sent to the Mindlytics service.  
+This method will return only after all queued messages are sent to the Mindlytics service.
 
 ```ts
 await session.identify({
@@ -241,7 +241,7 @@ await session.identify({
 })
 ```
 
-Used to identify a user within a session.  Immediately binds this user to the current session.  
+Used to identify a user within a session.  Immediately binds this user to the current session.
 
 ```ts
 await session.alias({
@@ -275,7 +275,7 @@ await session.startConversation({
 ```
 
 Start a new conversation.  You do not need to call this directly, as all other conversation-event-related methods will auto-create a conversation if they need to, but you can call it if you like.  The `attributes` is optional and if specified, the user-defined attributes are associated with the conversation.
-  
+
 ```ts
 await session.endConversation({
   conversation_id: 'conv-id-1',
@@ -287,7 +287,7 @@ await session.endConversation({
 
 End a conversation.  You do not need to call this directly, as an `session.end()` will automatically close any open conversations, but you can call it if you like.  The `attributes` is optional and if specified, the user-defined attributes are merged with any existing conversation attributes.
 
-> A note on conversation ids.  When you call `client.createSession()` you can pass an optional `conversationId` and if you do, this value will be automatically applied as the "conversation_id" to all methods that accept a "conversation_id".  If you do not supply a `conversationId` to `client.createSession()` then you must supply it to the events that are related to conversations.  Supplying to individual events could allow you to support multiple conversations within a single session.  
+> A note on conversation ids.  When you call `client.createSession()` you can pass an optional `conversationId` and if you do, this value will be automatically applied as the "conversation_id" to all methods that accept a "conversation_id".  If you do not supply a `conversationId` to `client.createSession()` then you must supply it to the events that are related to conversations.  Supplying to individual events could allow you to support multiple conversations within a single session.
 
 ```ts
 await session.trackConversationTurn({
@@ -325,7 +325,7 @@ await session.trackConversationUsage({
 })
 ```
 
-You can track costs independently of individual turns.  
+You can track costs independently of individual turns.
 
 ```ts
 await session.trackConversationFunction({
@@ -338,4 +338,4 @@ await session.trackConversationFunction({
 })
 ```
 
-Track a tool call.  
+Track a tool call.
