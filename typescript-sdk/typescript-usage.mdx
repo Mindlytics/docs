@@ -2,7 +2,7 @@
 title: "Typescript SDK Usage"
 ---
 
-This is the [Mindlytics](https://mindlytics.ai) client-side SDK for Javascript clients. It is used to authenticate and send telemetry events to the Mindlytics analytics backend server. 
+This is the [Mindlytics](https://mindlytics.ai) client-side SDK for Javascript clients. It is used to authenticate and send telemetry events to the Mindlytics analytics backend server.
 
 This SDK uses an async queue to decouple your existing client code from the communication overhead of sending data to Mindlytics. When you send events with this SDK you are simply pushing data into a queue. In the background, the SDK will pop the queue and handle the actual communication with Mindlytics, handling errors, timeouts, rate limits, etc with zero impact to your main application.
 
