@@ -1,31 +1,117 @@
 ---
-title: "Conversation KPI Chart"
+title: "Introduction"
 ---
 
-The **Conversation KPI** chart in Mindlytics provides a comprehensive view of conversational performance by combining multiple KPIs into a single, powerful dashboard. Mindlytics extracts insights from natural language interactions between your users and AI into actionable metrics.
+All **Mindlytics Analysis Charts** follow a common configuration and interaction model. This pattern allows users to quickly create, modify, save, and reuse charts across different analytical use cases.
 
-With this chart, you can analyse:
+Each chart is configured using **left-side controls**, a **central visualization area**, and **top-right visualization options**.
 
-**1. Intent Conversion Rate (ICR)**\
-_Measures the effectiveness of your AI agent in resolving user intents._\
-A high ICR indicates that your agent is successfully understanding and fulfilling user goals within a conversation, signaling strong intent recognition and response quality.
+---
 
-**2. First Intent Friction (FIF)**\
-_Quantifies the responsiveness of your AI agent at the start of a conversation._\
-FIF measures the time taken to resolve the user's first expressed intent. Lower friction suggests a smoother, faster onboarding experience and early user satisfaction.
+## 1. Left-side configuration controls
 
-**3. New Intents**\
-_Tracks the emergence of user intents outside the expected scope._\
-This metric highlights the frequency and nature of unexpected or unhandled intents expressed by users, helping teams identify coverage gaps and new demand signals.
+The left panel defines **what data is included** in the chart and **how it is filtered**. While the exact controls may vary by chart type, they follow a consistent structure.
 
-**4. Sentiment**\
-_Assesses user sentiment during interactions with the AI agent._\
-Derived from user language and behavior, this metric reflects how positively or negatively users feel while engaging with the agent—providing insight into user satisfaction and emotional tone.
+### Events
 
-**5. AI-Human Engagement Duration**\
-_Analyzes how long users actively engage with the AI agent per session._\
-This KPI captures the duration of conversations, offering a view into session depth and sustained user interest or complexity of task resolution.
+Defines which events are included in the analysis.
 
-**6. Prompts per Engagement**\
-_Indicates the average number of messages exchanged between the user and AI agent per session._\
-This helps evaluate interaction density—whether conversations are concise and effective or prolonged and potentially inefficient.
+- Default: **Any Event** (includes all tracked events)
+- One or more specific events can be selected
+- Selected events can be filtered using **event properties**
+
+**Example**
+
+> Event = `message_sent`\
+> Event Property = `source = mobile`
+
+---
+
+### For users
+
+Restricts analysis to a specific set of users.
+
+- Default: **All users**
+- Filter users by:
+  - User traits and values
+  - Users who performed a specific event
+  - Preconfigured user cohorts
+
+**Example**
+
+> Users where `plan = enterprise`
+
+---
+
+### Shown Intent
+
+Adds intent-level context to the analysis.
+
+- Filters events to those generated when a specific intent was expressed
+
+**Example**
+
+> Shown Intent = `ResetPassword`
+
+---
+
+### Measured as
+
+Defines how the selected data is aggregated.
+
+- **Uniques** – Number of unique users who generated the events
+- **Totals** – Total number of events generated
+- **Average** – Average number of events per user
+
+**Example**
+
+> Measured as = **Totals** → “How many messages were sent?”
+
+---
+
+## 2. Time range and bucketing
+
+Time controls appear in the top-right of the chart display area and apply across all chart types.
+
+- Bucket data **daily**, **weekly**, or **monthly**
+- Choose a custom start and end date
+- Or select predefined ranges such as **7d**, **30d**, or **60d**
+
+**Example**
+
+> Daily buckets over the last 7 days
+
+---
+
+## 3. Visualization options
+
+Users can control how the data is rendered.
+
+- Select **Line** or **Bar** chart (where applicable)
+- Visualization updates instantly as configuration changes
+
+---
+
+## 4. Chart metadata and saving
+
+At the top of the chart display area, users can configure metadata for reuse and sharing.
+
+- **Chart name** (required to save)
+- **Optional description** for context
+
+Saved charts:
+
+- Appear under the **Charts** section in the left navigation
+- Can be added to one or more dashboards
+- Can be deleted using the **“…”** menu
+
+---
+
+## 5. Summary metrics and underlying data
+
+Below the chart title, Mindlytics displays **pre-calculated summary values** for the selected dataset.
+
+At the bottom of the chart display area, the **underlying data table** used to render the chart is shown.
+
+- Enables export or copy/paste
+- Ensures transparency between visualization and raw data

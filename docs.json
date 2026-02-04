@@ -117,6 +117,7 @@
             "group": "Charts and KPIs",
             "pages": [
               "insights/charts/conversation-analysis-copied-1",
+              "insights/charts/conversation-analysis-copied-2",
               "insights/charts/intent-analysis",
               "insights/charts/segmentation",
               "insights/charts/session",
