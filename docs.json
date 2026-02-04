@@ -105,15 +105,17 @@
         "tab": "Insights",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Visualization Portal",
             "pages": [
-              "insights/getting-started"
+              "insights/getting-started",
+              "insights/getting-started-copied-1",
+              "insights/getting-started-copied-2",
+              "insights/getting-started-copied-3"
             ]
           },
           {
-            "group": "Insights and Charts",
+            "group": "Charts and KPIs",
             "pages": [
-              "insights/charts/conversation-analysis",
               "insights/charts/conversation-analysis-copied-1",
               "insights/charts/intent-analysis",
               "insights/charts/segmentation",
