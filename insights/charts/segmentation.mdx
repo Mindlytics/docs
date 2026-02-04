@@ -2,3 +2,31 @@
 title: "Segmentation Analysis Chart"
 description: "Description of your new file."
 ---
+
+The **Segmentation Analysis Chart** allows you to break down events by users, intents, and time to understand _who is doing what_ in your AI application. It is the most flexible analysis chart in Mindlytics and is commonly used for exploratory analysis, validation, and trend monitoring.
+
+This chart follows the standard **Chart Configuration Pattern**.
+
+## What this chart answers
+
+- How many users performed a specific action?
+- How event volume changes over time for a given cohort?
+- How engagement differs by intent, user attribute, or time window?
+
+## How it works
+
+You select one or more events, optionally filter them by user traits and intent context, choose how results are measured, and visualize trends over time.
+
+## Examples
+
+- **Unique users sending messages per day**
+  - Event = `message_sent`
+  - Measured as = **Uniques**
+  - Bucket = Daily, Last 7 days
+- **Total API calls for a specific intent**
+  - Event = `api_call`
+  - Shown Intent = `TrackOrder`
+  - Measured as = **Totals**
+- **Average number of prompts per user**
+  - Event = `prompt_sent`
+  - Measured as = **Average**

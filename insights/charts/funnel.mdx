@@ -2,3 +2,31 @@
 title: "Funnel Analysis Chart"
 description: "Description of your new file."
 ---
+
+The **Funnel Analysis Chart** visualizes how users progress through a defined sequence of steps and where they drop off. It is used to measure conversion, completion, and friction in AI-driven workflows.
+
+This chart follows the standard **Chart Configuration Pattern** with ordered steps.
+
+## What this chart answers
+
+- Where do users drop off in a conversational flow?
+- How many users complete a task after expressing an intent?
+- Which steps introduce the most friction?
+
+## How it works
+
+You define an ordered list of events that represent steps in a flow. Mindlytics computes conversion rates and drop-offs between each step.
+
+## Examples
+
+- **Booking flow conversion**
+  - Step 1: `conversation_started`
+  - Step 2: `intent_detected (BookAppointment)`
+  - Step 3: `slot_selected`
+  - Step 4: `booking_confirmed`
+- **Support resolution flow**
+  - Step 1: `intent_detected`
+  - Step 2: `ai_response_sent`
+  - Step 3: `issue_resolved`
+
+Use this chart to optimize task success and reduce abandonment.
