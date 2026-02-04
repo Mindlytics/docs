@@ -111,9 +111,10 @@
             ]
           },
           {
-            "group": "Charts",
+            "group": "Insights and Charts",
             "pages": [
               "insights/charts/conversation-analysis",
+              "insights/charts/conversation-analysis-copied-1",
               "insights/charts/intent-analysis",
               "insights/charts/segmentation",
               "insights/charts/session",
