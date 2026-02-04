@@ -27,31 +27,31 @@
       {
         "tab": "SDKs",
         "groups": [
-            {
-                "group": "Overview",
+          {
+            "group": "Overview",
+            "pages": [
+              "overview-sdks-apis"
+            ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              {
+                "group": "Python SDK",
                 "pages": [
-                    "overview-sdks-apis"
+                  "python-sdk/python-usage",
+                  "python-sdk/examples"
                 ]
-            },
-            {
-                "group": "SDKs",
+              },
+              {
+                "group": "Typescript SDK",
                 "pages": [
-                    {
-                        "group": "Python SDK",
-                        "pages": [
-                            "python-sdk/python-usage",
-                            "python-sdk/examples"
-                        ]
-                    },
-                    {
-                        "group": "Typescript SDK",
-                        "pages": [
-                            "typescript-sdk/typescript-usage",
-                            "typescript-sdk/examples"
-                        ]
-                    }
+                  "typescript-sdk/typescript-usage",
+                  "typescript-sdk/examples"
                 ]
-            }
+              }
+            ]
+          }
         ]
       },
       {
@@ -133,7 +133,8 @@
           {
             "group": "Users",
             "pages": [
-              "insights/users"
+              "insights/users",
+              "insights/users-copied-1"
             ]
           },
           {
